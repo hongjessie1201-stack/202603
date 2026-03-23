@@ -9,7 +9,6 @@
 :root{
   --accent:#d6336c;
   --bg:#f5f5f7;
-  --card:#ffffff;
   --muted:#666;
   font-family:'Noto Sans TC',sans-serif;
 }
@@ -34,7 +33,6 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* 左側 */
 .left{
   background:#2f6fa3;
   color:white;
@@ -64,7 +62,6 @@ h1{
 h2{
   text-align:center;
   font-size:14px;
-  font-weight:normal;
   margin:4px 0 20px;
 }
 
@@ -75,7 +72,6 @@ h2{
 .section h3{
   font-size:14px;
   border-bottom:1px solid rgba(255,255,255,0.4);
-  padding-bottom:4px;
 }
 
 .info{
@@ -83,24 +79,12 @@ h2{
   margin:6px 0;
 }
 
-/* 右側 */
 .right{
   padding:24px;
 }
 
 .right h3{
-  margin-bottom:6px;
   border-bottom:2px solid #eee;
-  padding-bottom:4px;
-}
-
-.item{
-  margin-bottom:14px;
-}
-
-.meta{
-  font-size:12px;
-  color:var(--muted);
 }
 
 .skill-bar{
@@ -113,16 +97,16 @@ h2{
 .skill-bar div{
   height:100%;
   background:var(--accent);
-  border-radius:10px;
-}
-
-ul{
-  padding-left:18px;
 }
 </style>
 </head>
 
 <body>
+
+<!--音樂來源 suno,ai-->
+<audio id="bgm" autoplay loop muted>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
 <div class="resume">
@@ -150,13 +134,13 @@ ul{
 <div>服裝設計手繪</div>
 <div class="skill-bar"><div style="width:90%"></div></div>
 
-<div>Illustrator 排版設計</div>
+<div>Illustrator</div>
 <div class="skill-bar"><div style="width:75%"></div></div>
 
-<div>Photoshop 影像處理</div>
+<div>Photoshop</div>
 <div class="skill-bar"><div style="width:65%"></div></div>
 
-<div>基礎打版與縫製</div>
+<div>打版與縫製</div>
 <div class="skill-bar"><div style="width:70%"></div></div>
 
 </div>
@@ -175,51 +159,44 @@ ul{
 <h3>個人簡介</h3>
 <p>
 就讀亞洲大學時尚設計系，對服裝設計與視覺美學具有高度熱忱。  
-擅長手繪服裝設計稿、色彩搭配與布料應用，並具備基本打版與縫製能力。  
-喜歡從生活觀察與文化元素中發想設計概念，致力於打造兼具創意與實穿性的作品。
+擅長手繪設計、色彩搭配與布料應用，並具備基礎打版與製作能力。  
+致力於創造兼具創意與實穿性的服裝作品。
 </p>
 
 <h3>學歷</h3>
-<div class="item">
-<strong>亞洲大學｜時尚設計學系</strong>
-<div class="meta">2022 — 至今</div>
-<p>
-主修服裝設計、服裝結構、布料研究與時尚趨勢分析，  
-熟悉設計流程從概念發想到成品製作。
-</p>
-</div>
+<p>亞洲大學 時尚設計學系（2022－至今）</p>
 
 <h3>經驗</h3>
-
-<div class="item">
-<strong>校園時尚展｜設計作品展出</strong>
-<div class="meta">2023</div>
-<p>
-負責整體服裝設計概念發想與製作，  
-完成從設計稿、布料選擇到成衣製作流程，並參與現場展示。
-</p>
-</div>
-
-<div class="item">
-<strong>服裝設計課程專題｜永續時尚</strong>
-<div class="meta">2024</div>
-<p>
-以環保與再利用為設計主題，  
-運用回收布料進行創作，提升作品的設計價值與永續理念。
-</p>
-</div>
+<p>2023 校園時尚展 作品展出</p>
 
 <h3>作品特色</h3>
 <ul>
-<li>擅長女性服裝設計與輪廓變化</li>
-<li>注重布料質感與色彩搭配</li>
-<li>風格偏向簡約與現代感設計</li>
+<li>女性服裝設計與輪廓變化</li>
+<li>布料質感與色彩搭配</li>
+<li>簡約現代風格</li>
 </ul>
 
 </div>
 
 </div>
 </div>
+
+<!-- 🎵 自動播放補強 -->
+<script>
+const audio = document.getElementById("bgm");
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    audio.muted = false;
+    audio.play().catch(()=>{});
+  }, 500);
+});
+
+document.addEventListener("click", () => {
+  audio.muted = false;
+  audio.play();
+}, { once: true });
+</script>
 
 </body>
 </html>
