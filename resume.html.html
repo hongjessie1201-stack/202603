@@ -18,12 +18,14 @@ body{
   background:var(--bg);
 }
 
+/* 外框 */
 .container{
-  max-width:900px;
+  max-width:1000px;
   margin:40px auto;
   padding:20px;
 }
 
+/* 主結構 */
 .resume{
   display:grid;
   grid-template-columns:280px 1fr;
@@ -33,10 +35,12 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
+/* 左側 */
 .left{
   background:#2f6fa3;
   color:white;
   padding:20px;
+  text-align:center;
 }
 
 .photo{
@@ -55,18 +59,17 @@ body{
 }
 
 h1{
-  text-align:center;
   margin:10px 0 0;
 }
 
 h2{
-  text-align:center;
   font-size:14px;
   margin:4px 0 20px;
 }
 
 .section{
   margin-top:20px;
+  text-align:left;
 }
 
 .section h3{
@@ -79,6 +82,7 @@ h2{
   margin:6px 0;
 }
 
+/* 右側 */
 .right{
   padding:24px;
 }
@@ -97,6 +101,34 @@ h2{
 .skill-bar div{
   height:100%;
   background:var(--accent);
+}
+
+/* ⭐ RWD 手機版 */
+@media (max-width:768px){
+  .resume{
+    grid-template-columns:1fr;
+  }
+
+  .left{
+    text-align:center;
+  }
+
+  .section{
+    text-align:center;
+  }
+
+  .container{
+    margin:10px;
+    padding:10px;
+  }
+
+  h1{
+    font-size:20px;
+  }
+
+  h2{
+    font-size:13px;
+  }
 }
 </style>
 </head>
@@ -159,8 +191,7 @@ h2{
 <h3>個人簡介</h3>
 <p>
 就讀亞洲大學時尚設計系，對服裝設計與視覺美學具有高度熱忱。  
-擅長手繪設計、色彩搭配與布料應用，並具備基礎打版與製作能力。  
-致力於創造兼具創意與實穿性的服裝作品。
+擅長手繪設計、色彩搭配與布料應用，並具備基礎打版與製作能力。
 </p>
 
 <h3>學歷</h3>
@@ -181,7 +212,7 @@ h2{
 </div>
 </div>
 
-<!-- 🎵 自動播放補強 -->
+<!-- 🎵 音樂自動播放補強 -->
 <script>
 const audio = document.getElementById("bgm");
 
